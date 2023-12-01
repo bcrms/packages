@@ -33,17 +33,17 @@ package.json
 
 ```json
 {
-  "name": "@marizma/{{PACKAGE_NAME}}",
+  "name": "@bcrms/{{PACKAGE_NAME}}",
   "version": "1.0.0",
   "description": "{{A SHORT DESCRIPTION}}",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Marizma/packages.git",
+    "url": "https://github.com/bcrms/packages.git",
     "directory": "src/{{PACKAGE_NAME}}/"
   },
   "publishConfig": {
     "access": "public",
-    "@marizma:registry": "https://npm.pkg.github.com"
+    "@bcrms:registry": "https://npm.pkg.github.com"
   }
 }
 ```
@@ -52,7 +52,7 @@ package.json
 
 ### Deploy a package
 
-In order to deploy a package to the Marizma org, first commit the update to this repository.
+In order to deploy a package to the bcrms org, first commit the update to this repository.
 
 ```
 cd PACKAGE_FOLDER
@@ -65,6 +65,6 @@ After that, login with the correct scope and publish the package.
 > You must ensure that you are in the package folder before publishing.
 
 ```
-npm login --registry=https://npm.pkg.github.com --scope=@marizma
+npm login --registry=https://npm.pkg.github.com --scope=@bcrms
 npm publish
 ```
