@@ -1,0 +1,14 @@
+{
+  "name": "@bcrms/spr",
+  "version": "1.0.0",
+  "description": "spr library for nevermore",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brms/packages.git",
+    "directory": "src/spr/"
+  },
+  "publishConfig": {
+    "access": "public",
+    "@bcrms:registry": "https://npm.pkg.github.com"
+  }
+}

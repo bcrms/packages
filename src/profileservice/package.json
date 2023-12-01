@@ -1,0 +1,14 @@
+{
+  "name": "@bcrms/profileservice",
+  "version": "1.0.0",
+  "description": "profileservice library for nevermore",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bcrms/packages.git",
+    "directory": "src/profileservice/"
+  },
+  "publishConfig": {
+    "access": "public",
+    "@bcrms:registry": "https://npm.pkg.github.com"
+  }
+}
