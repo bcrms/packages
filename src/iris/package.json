@@ -1,0 +1,14 @@
+{
+  "name": "@bcrms/iris",
+  "version": "1.0.0",
+  "description": "iris ui library for nevermore",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brms/packages.git",
+    "directory": "src/iris/"
+  },
+  "publishConfig": {
+    "access": "public",
+    "@bcrms:registry": "https://npm.pkg.github.com"
+  }
+}
