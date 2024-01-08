@@ -1,0 +1,14 @@
+{
+  "name": "@bcrms/remnotepacketsizecounter",
+  "version": "1.0.0",
+  "description": "remnotepacketsizecounter library for nevermore",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brms/packages.git",
+    "directory": "src/remnotepacketsizecounter/"
+  },
+  "publishConfig": {
+    "access": "public",
+    "@bcrms:registry": "https://npm.pkg.github.com"
+  }
+}
