@@ -229,32 +229,17 @@ return function(Iris: Types.Iris): Types.Internal
 
         -- if we are running in Studio, we want full error tracebacks, so we don't have
         -- any pcall to protect from an error.
-        if game:GetService("RunService"):IsStudio() then
-            for _, callback: () -> () in Internal._connectedFunctions do
-                callback()
-            end
-        else
-            --debug.profilebegin("Iris/Generate")
-
-            -- each frame we check on our thread status.
-            local coroutineStatus = coroutine.status(Internal._cycleCoroutine)
-            if coroutineStatus == "suspended" then
-                -- suspended means it yielded, either because it was a complete success
-                -- or it caught an error in the code. We run it again for this frame.
-                local _, success, result = coroutine.resume(Internal._cycleCoroutine)
-                if success == false then
-                    -- Connected function code errored
-                    error(result, 0)
-                end
-            elseif coroutineStatus == "running" then
-                -- still running (probably because of an asynchronous method inside a connection).
-                error("Iris cycleCoroutine took to long to yield. Connected functions should not yield.")
-            else
-                -- should never reach this (nothing you can do).
-                error("unrecoverable state")
-            end
-            --debug.profileend()
-        end
+        
+        -- fnuer edit.
+		-- default coroutine method makes the system crap the bed.
+		-- so im going to do this instead
+		for _, callback: () -> () in Internal._connectedFunctions do
+			local ok, err = pcall(callback)
+			
+			if not ok then
+				error(err)
+			end
+		end
         --debug.profileend()
     end
 
